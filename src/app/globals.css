@@ -399,6 +399,14 @@ body {
   margin-bottom: 2rem;
 }
 
+.contact-title-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
 .contact-icon {
   width: 3rem;
   height: 3rem;
@@ -408,13 +416,15 @@ body {
   align-items: center;
   justify-content: center;
   color: white;
+  flex-shrink: 0;
 }
 
 .contact-text h3 {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #1f2937;
+  color: rgba(255, 255, 255, 0.95);
   margin-bottom: 0.5rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6), 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 .contact-text p {
@@ -432,15 +442,16 @@ body {
 
 .contact-email-link {
   font-size: 1.125rem;
-  color: #1D622E;
+  color: rgba(255, 255, 255, 0.95);
   font-weight: 600;
   text-decoration: none;
   transition: all 0.3s ease;
   word-break: break-word;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6), 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 .contact-email-link:hover {
-  color: #15803d;
+  color: rgba(255, 255, 255, 1);
   text-decoration: underline;
 }
 
