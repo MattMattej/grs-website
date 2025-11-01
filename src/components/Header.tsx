@@ -29,9 +29,10 @@ export default function Header() {
         <div className="header-content">
           <button
             onClick={() => scrollToSection('hero')}
-            className="logo"
+            className="logo header-logo-container"
           >
-            GRS – Gestión de Recursos Sustentables
+            <img src="/logo1.jpg" alt="GRS Logo" className="header-logo-img" />
+            <span>GRS – Gestión de Recursos Sustentables</span>
           </button>
 
           <nav className="nav">

@@ -16,7 +16,7 @@ export default function Nosotros() {
   ];
 
   return (
-    <section id="nosotros" className="section section-white">
+    <section id="nosotros" className="section section-white section-with-bg section-bg-stones">
       <div className="container">
         <h2>NOSOTROS</h2>
         

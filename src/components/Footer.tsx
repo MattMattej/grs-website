@@ -19,13 +19,8 @@ export default function Footer() {
             </p>
           </div>
 
-          <div>
-            <h3>Navegación</h3>
-            <nav className="footer-nav">
-              <button onClick={() => scrollToSection('nosotros')}>NOSOTROS</button>
-              <button onClick={() => scrollToSection('servicios')}>SERVICIOS</button>
-              <button onClick={() => scrollToSection('contacto')}>CONTACTO</button>
-            </nav>
+          <div className="footer-logo-container">
+            <img src="/logo2.jpg" alt="GRS Logo" className="footer-logo-img" />
           </div>
         </div>
 

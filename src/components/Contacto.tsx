@@ -2,7 +2,7 @@
 
 export default function Contacto() {
   return (
-    <section id="contacto" className="section section-white">
+    <section id="contacto" className="section section-white section-with-bg section-bg-contacto">
       <div className="container">
         <h2>CONTACTO</h2>
         <p>¿Tienes alguna consulta? Estamos aquí para ayudarte con soluciones sostenibles.</p>
@@ -17,7 +17,14 @@ export default function Contacto() {
             </div>
             <div className="contact-text">
               <h3>Email</h3>
-              <p>info@grs.com.ar</p>
+              <div className="contact-emails">
+                <a href="mailto:alejandrapacheco@grsasesorias.com" className="contact-email-link">
+                  alejandrapacheco@grsasesorias.com
+                </a>
+                <a href="mailto:carmendelfino@grsasesorias.com" className="contact-email-link">
+                  carmendelfino@grsasesorias.com
+                </a>
+              </div>
             </div>
           </div>
         </div>

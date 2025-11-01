@@ -49,7 +49,7 @@ export default function Servicios() {
   ];
 
   return (
-    <section id="servicios" className="section section-gray">
+    <section id="servicios" className="section section-gray section-with-bg section-bg-services">
       <div className="container">
         <h2>SERVICIOS</h2>
         

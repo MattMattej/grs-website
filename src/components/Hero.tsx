@@ -9,7 +9,7 @@ export default function Hero() {
   };
 
   return (
-    <section id="hero" className="hero">
+    <section id="hero" className="hero hero-with-bg">
       <div className="hero-content">
         <h1>
           Por una Gestión donde cada parte avance integrándose sin fricción. Así fluye la transformación.
