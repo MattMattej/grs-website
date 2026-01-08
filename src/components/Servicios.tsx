@@ -1,6 +1,14 @@
 'use client';
 
+import { useState } from 'react';
+
 export default function Servicios() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const toggleService = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
   const services = [
     {
       title: "CALIDAD",
@@ -85,23 +93,43 @@ export default function Servicios() {
           Consultoría especializada en la transformación de sistemas de gestión, en plataformas sostenibles, capaces de generar la mejora continua en todos los niveles de la organización.
         </p>
 
-        <div className="grid grid-2 grid-3-mobile">
+        <div className="grid grid-2 grid-3-mobile servicios-grid">
           {services.map((service, index) => (
-            <div key={index} className="card servicio-card">
-              <div className="servicio-card-image">
-                <img 
-                  src={service.logo} 
-                  alt={`${service.title} - Isologo GRS`}
-                  className="servicio-isologo"
-                />
-              </div>
-              <h3>{service.title}</h3>
+            <div key={index} className="card servicio-card servicio-accordion">
+              <button
+                className="servicio-header"
+                onClick={() => toggleService(index)}
+                aria-expanded={openIndex === index}
+              >
+                <div className="servicio-card-image-mobile">
+                  <img 
+                    src={service.logo} 
+                    alt={`${service.title} - Isologo GRS`}
+                    className="servicio-isologo-mobile"
+                  />
+                </div>
+                <div className="servicio-title-wrapper">
+                  <h3>{service.title}</h3>
+                </div>
+                <span className="servicio-toggle-icon">
+                  {openIndex === index ? '−' : '+'}
+                </span>
+              </button>
               
-              <ul>
-                {service.items.map((item, itemIndex) => (
-                  <li key={itemIndex}>{item}</li>
-                ))}
-              </ul>
+              <div className={`servicio-content ${openIndex === index ? 'open' : ''}`}>
+                <div className="servicio-card-image-desktop">
+                  <img 
+                    src={service.logo} 
+                    alt={`${service.title} - Isologo GRS`}
+                    className="servicio-isologo"
+                  />
+                </div>
+                <ul>
+                  {service.items.map((item, itemIndex) => (
+                    <li key={itemIndex}>{item}</li>
+                  ))}
+                </ul>
+              </div>
             </div>
           ))}
         </div>

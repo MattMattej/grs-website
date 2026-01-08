@@ -443,6 +443,14 @@ body {
   margin: 0 auto;
 }
 
+/* Forzar 1 columna en móvil para servicios */
+@media (max-width: 768px) {
+  #servicios .grid-2,
+  #servicios .servicios-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
 .grid-4 {
   grid-template-columns: repeat(4, 1fr);
 }
@@ -479,6 +487,135 @@ body {
   height: 100%;
   object-fit: contain;
   object-position: top right;
+}
+
+/* Acordeón para móvil */
+.servicio-accordion {
+  overflow: hidden;
+}
+
+.servicio-header {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0;
+}
+
+.servicio-header-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.servicio-title-wrapper {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+}
+
+.servicio-header h3 {
+  margin-bottom: 0;
+  padding-right: 0;
+  min-height: auto;
+  border-left: 4px solid #1D622E;
+  padding-left: 1rem;
+  font-size: 1.125rem;
+  line-height: 1.4;
+  word-wrap: break-word;
+  flex: 1;
+}
+
+.servicio-toggle-icon {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #1D622E;
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: rgba(29, 98, 46, 0.1);
+  transition: all 0.3s ease;
+}
+
+.servicio-header[aria-expanded="true"] .servicio-toggle-icon {
+  background-color: #1D622E;
+  color: white;
+  transform: rotate(180deg);
+}
+
+.servicio-content {
+  max-height: none;
+  overflow: visible;
+  padding-top: 0;
+}
+
+.servicio-content.open {
+  max-height: none;
+  padding-top: 0;
+}
+
+.servicio-card-image-mobile {
+  display: none;
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+}
+
+/* Desktop - mostrar tarjetas normales */
+@media (min-width: 769px) {
+  .servicio-accordion {
+    padding: 2rem;
+  }
+
+  .servicio-header {
+    display: none;
+  }
+
+  .servicio-content {
+    display: block;
+    max-height: none;
+    overflow: visible;
+    padding: 0;
+  }
+
+  .servicio-card-image-desktop {
+    display: block;
+  }
+
+  .servicio-card-image-mobile {
+    display: none;
+  }
+}
+
+.servicio-isologo-mobile {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.servicio-card-image-desktop {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 120px;
+  height: 120px;
+  z-index: 0;
+  opacity: 1;
+  pointer-events: none;
 }
 
 .card:hover {
@@ -802,6 +939,95 @@ body {
   .card {
     padding: 1.5rem;
   }
+
+  /* Servicios responsive - Acordeón en móvil */
+  #servicios .container {
+    max-width: 100%;
+    padding: 0 16px;
+  }
+
+  #servicios .grid-2,
+  #servicios .servicios-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem;
+    max-width: 100%;
+  }
+
+  .servicio-card {
+    padding: 0;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .servicio-header {
+    display: flex;
+    padding: 1.25rem;
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .servicio-header:hover {
+    background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+  }
+
+  .servicio-header[aria-expanded="true"] {
+    border-bottom: 2px solid #1D622E;
+    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+  }
+
+  .servicio-card-image-desktop {
+    display: none;
+  }
+
+  .servicio-card-image-mobile {
+    display: block;
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+  }
+
+  .servicio-content {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 !important;
+    margin: 0;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+    background: white;
+    border-radius: 0 0 8px 8px;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .servicio-content.open {
+    max-height: 5000px;
+    padding: 1.25rem !important;
+    opacity: 1;
+    visibility: visible;
+    border: 1px solid #e2e8f0;
+    border-top: none;
+  }
+
+  .servicio-header h3 {
+    font-size: 1.125rem;
+    padding-right: 0;
+    margin-bottom: 0;
+    flex: 1;
+  }
+
+  .servicio-content ul {
+    margin-top: 0;
+    padding-left: 0;
+  }
+
+  .servicio-content li {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+    padding-right: 0;
+  }
   
   .footer-content {
     grid-template-columns: 1fr;
@@ -849,6 +1075,55 @@ body {
   .contact-email-link {
     font-size: 0.9rem;
   }
+
+  /* Servicios responsive - pantallas muy pequeñas */
+  #servicios .container {
+    padding: 0 12px;
+  }
+
+  #servicios .grid-2,
+  #servicios .servicios-grid {
+    gap: 0.875rem;
+    grid-template-columns: 1fr !important;
+  }
+
+  .servicio-header {
+    padding: 1rem;
+  }
+
+  .servicio-content {
+    padding: 0 !important;
+    margin: 0;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .servicio-content.open {
+    padding: 1rem !important;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .servicio-header h3 {
+    font-size: 1rem;
+    padding-left: 0.75rem;
+  }
+
+  .servicio-card-image-mobile {
+    width: 50px;
+    height: 50px;
+  }
+
+  .servicio-toggle-icon {
+    width: 28px;
+    height: 28px;
+    font-size: 1.25rem;
+  }
+
+  .servicio-content li {
+    font-size: 0.875rem;
+    margin-bottom: 0.625rem;
+  }
 }
 
 /* Tablet responsive */
@@ -859,5 +1134,23 @@ body {
 
   .section-with-bg::before {
     filter: blur(1px);
+  }
+
+  /* Servicios en tablet */
+  #servicios .container {
+    max-width: 1200px;
+  }
+
+  #servicios .grid-2 {
+    gap: 2rem;
+  }
+
+  .card h3 {
+    padding-right: 120px;
+  }
+
+  .servicio-card-image {
+    width: 100px;
+    height: 100px;
   }
 }
