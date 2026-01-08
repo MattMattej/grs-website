@@ -18,21 +18,6 @@ export default function Hero() {
         <p>
           Nos especializamos en generar soluciones sostenibles adecuadas a los recursos de proyectos y organizaciones.
         </p>
-        
-        <div className="hero-buttons">
-          <button
-            onClick={() => scrollToSection('contacto')}
-            className="btn-primary"
-          >
-            CONTACTO
-          </button>
-          <button
-            onClick={() => scrollToSection('servicios')}
-            className="btn-secondary"
-          >
-            SERVICIOS
-          </button>
-        </div>
       </div>
     </section>
   );

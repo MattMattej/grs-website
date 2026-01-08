@@ -55,11 +55,39 @@ export default function Header() {
 
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            style={{ display: 'none' }}
+            className="mobile-menu-toggle"
+            aria-label="Toggle menu"
+            aria-expanded={isMobileMenuOpen}
           >
-            ☰
+            <span className={`hamburger ${isMobileMenuOpen ? 'active' : ''}`}>
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
           </button>
         </div>
+
+        {/* Mobile Menu */}
+        <nav className={`mobile-nav ${isMobileMenuOpen ? 'open' : ''}`}>
+          <button
+            onClick={() => scrollToSection('nosotros')}
+            className="mobile-nav-item"
+          >
+            NOSOTROS
+          </button>
+          <button
+            onClick={() => scrollToSection('servicios')}
+            className="mobile-nav-item"
+          >
+            SERVICIOS
+          </button>
+          <button
+            onClick={() => scrollToSection('contacto')}
+            className="mobile-nav-item"
+          >
+            CONTACTO
+          </button>
+        </nav>
       </div>
     </header>
   );

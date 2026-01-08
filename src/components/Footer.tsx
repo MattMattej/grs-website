@@ -25,7 +25,7 @@ export default function Footer() {
         </div>
 
         <div className="footer-bottom">
-          <p>© GRS – Gestión de Recursos Sustentables. Todos los derechos reservados.</p>
+          <p>© GRS – Gestión de Recursos Sustentables. Todos los derechos reservados. Setiembre 2025</p>
           <p>Desarrollado con ❤️ para un futuro sostenible</p>
         </div>
       </div>
