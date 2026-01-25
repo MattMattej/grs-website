@@ -124,6 +124,7 @@ export default function Servicios() {
                     className="servicio-isologo"
                   />
                 </div>
+                <h3 className="servicio-title-desktop">{service.title}</h3>
                 <ul>
                   {service.items.map((item, itemIndex) => (
                     <li key={itemIndex}>{item}</li>
